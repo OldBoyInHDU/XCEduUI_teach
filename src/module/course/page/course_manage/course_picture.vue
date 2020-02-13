@@ -46,7 +46,7 @@
         console.log(file)
         //调用服务端去删除课程图片信息，如果返回false，前端停止删除
         //异步调用
-        return new Promise((resolve,rejct)=>{
+        return new Promise((resolve,reject)=>{
           courseApi.deleteCoursePic(this.courseid).then(res=>{
             if(res.success){
 
@@ -55,7 +55,7 @@
             }else{
               this.$message.error("删除失败");
                 //失败
-              rejct()
+              reject()
             }
 
           })
